@@ -1,0 +1,46 @@
+<%- include('../sharing/head', { pageTitle: 'Signup'}) %>
+<link rel="stylesheet" href="/styles/auth.css">
+<link rel="stylesheet" href="/styles/form.css">
+
+</head>
+<%- include('../sharing/header') %>
+<body>
+    <main>
+     <form action="/signup" method="POST">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <h1>Create New Account</h1>
+        <p>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="confirm-email">Confirm Email</label>
+            <input type="text" id="confirm-email" name="confirm-email" required>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" minlength="6" required>
+        </p>
+        <hr>
+        <p>
+            <label for="fullname">Fullname</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </p>
+        <p>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+        </p>
+        <p>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+        </p>
+        <p>
+            <button class="button">Sign up</button>
+        </p>
+        <p><a href="/login">Instead Login</a></p>
+        
+     </form>
+    </main>
+
+<%- include('../sharing/footer') %>
+    
